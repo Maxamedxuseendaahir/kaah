@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaah News</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .carousel {
+            position: relative;
+            overflow: hidden;
+            max-width: 100%;
+            margin: auto;
+        }
+        .carousel-slide {
+            display: none;
+            text-align: center;
+        }
+        .carousel-slide img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        .carousel-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .control {
+            background: rgba(0,0,0,0.5);
+            color: #fff;
+            padding: 10px;
+            cursor: pointer;
+        }
+        @media (min-width: 600px) {
+            .carousel-slide img {
+                max-height: 400px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Featured Articles</h1>
+    <div class="carousel" id="carousel">
+        <div class="carousel-slide">
+            <img src="https://via.placeholder.com/800x400?text=Article+1" alt="Article 1">
+            <h2>Article Title 1</h2>
+        </div>
+        <div class="carousel-slide">
+            <img src="https://via.placeholder.com/800x400?text=Article+2" alt="Article 2">
+            <h2>Article Title 2</h2>
+        </div>
+        <div class="carousel-slide">
+            <img src="https://via.placeholder.com/800x400?text=Article+3" alt="Article 3">
+            <h2>Article Title 3</h2>
+        </div>
+        <div class="carousel-controls">
+            <span class="control" id="prev">&#10094;</span>
+            <span class="control" id="next">&#10095;</span>
+        </div>
+    </div>
+
+    <script>
+        (function() {
+            var slides = document.querySelectorAll('.carousel-slide');
+            var current = 0;
+
+            function showSlide(index) {
+                slides.forEach(function(slide, i) {
+                    slide.style.display = i === index ? 'block' : 'none';
+                });
+            }
+
+            function nextSlide() {
+                current = (current + 1) % slides.length;
+                showSlide(current);
+            }
+
+            function prevSlide() {
+                current = (current - 1 + slides.length) % slides.length;
+                showSlide(current);
+            }
+
+            document.getElementById('next').addEventListener('click', nextSlide);
+            document.getElementById('prev').addEventListener('click', prevSlide);
+
+            showSlide(current);
+            setInterval(nextSlide, 3000);
+        })();
+    </script>
+</body>
+</html>
