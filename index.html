@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="so">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kaah News</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <script src="js/main.js" defer></script>
+</head>
+<body class="flex flex-col min-h-screen">
+  <!-- Navbar -->
+  <nav class="bg-white shadow">
+    <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+      <div class="text-2xl font-bold">Kaah News</div>
+      <div class="hidden md:flex space-x-4">
+        <a href="index.html" class="hover:text-blue-600">Wararka</a>
+        <a href="about.html" class="hover:text-blue-600">Nagu Saabsan</a>
+        <a href="contact.html" class="hover:text-blue-600">Nala Soo Xidhiidh</a>
+      </div>
+      <div class="hidden md:flex space-x-2">
+        <button class="bg-blue-600 text-white px-3 py-1 rounded hover:bg-blue-700">Is Diiwaangeli</button>
+        <button class="border border-blue-600 text-blue-600 px-3 py-1 rounded hover:bg-blue-600 hover:text-white">Gal</button>
+      </div>
+      <button class="md:hidden" onclick="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden px-4 pb-4">
+      <a href="index.html" class="block py-1">Wararka</a>
+      <a href="about.html" class="block py-1">Nagu Saabsan</a>
+      <a href="contact.html" class="block py-1">Nala Soo Xidhiidh</a>
+      <div class="pt-2 space-y-2">
+        <button class="w-full bg-blue-600 text-white px-3 py-1 rounded">Is Diiwaangeli</button>
+        <button class="w-full border border-blue-600 text-blue-600 px-3 py-1 rounded">Gal</button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="flex-grow bg-cover bg-center text-white" style="background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('assets/images/placeholder1.svg');">
+    <div class="container mx-auto px-4 py-32 text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-4">Wararka ugu danbeeya ee Somaliland</h1>
+      <p class="text-xl">Ku soo dhawoow Kaah News</p>
+    </div>
+  </header>
+
+  <!-- News Section -->
+  <section class="container mx-auto px-4 py-12">
+    <h2 class="text-2xl font-bold mb-6">Wararkii Ugu Danbeeyay</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Article 1 -->
+      <article class="border rounded overflow-hidden shadow-sm">
+        <img src="assets/images/placeholder1.svg" alt="Article 1" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-bold text-lg mb-2">Xukuumadda Somaliland oo soo saartay siyaasad cusub</h3>
+          <p>Warbixin kooban oo ku saabsan siyaasadda cusub ee ay soo saartay xukuumaddu.</p>
+        </div>
+      </article>
+      <!-- Article 2 -->
+      <article class="border rounded overflow-hidden shadow-sm">
+        <img src="assets/images/placeholder2.svg" alt="Article 2" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-bold text-lg mb-2">Doorashada deegaanka oo si habsami ah ku socota</h3>
+          <p>Warbixin ku saabsan sida ay doorashadu uga socoto gobollada kala duwan.</p>
+        </div>
+      </article>
+      <!-- Article 3 -->
+      <article class="border rounded overflow-hidden shadow-sm">
+        <img src="assets/images/placeholder3.svg" alt="Article 3" class="w-full h-48 object-cover">
+        <div class="p-4">
+          <h3 class="font-bold text-lg mb-2">Dhallinyarada Hargeisa oo qabanqaabinaysa bandhig farshaxan</h3>
+          <p>Bandhiga ayaa lagu qaban doonaa xarunta dhaqanka, iyada oo la soo bandhigi doono farshaxanno kala duwan.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer class="bg-gray-100 py-4 text-center">
+    <p>&copy; 2025 Kaah News. All rights reserved.</p>
+  </footer>
+</body>
+</html>
